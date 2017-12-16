@@ -1,0 +1,13 @@
+[user]
+	name = Gediminas Paulauskas
+	email = gediminas@menesis.lt
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[alias]
+	st = status
+	di = diff
+	dc = diff --cached
+    top = log --oneline -n10

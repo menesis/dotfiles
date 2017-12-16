@@ -1,0 +1,29 @@
+.cache
+/.bash_history
+/.dotnet/
+/.PyCharmCE2017.3/
+/.shell_prompt.sh
+/.tig_history
+/.vim/
+/.viminfo
+/3D Objects/
+/AppData/
+/Contacts/
+/Desktop/
+/Documents/
+/Downloads/
+/Dropbox/
+/Evernote/
+/Favorites/
+/IntelGraphicsProfiles/
+/Links/
+/MicrosoftEdgeBackups/
+/Music/
+/ntuser.*
+/NTUSER.DAT*
+/OneDrive/
+/Pictures/
+/Projects/
+/Saved Games/
+/Searches/
+/Videos/
