@@ -121,11 +121,6 @@ function promptline {
 }
 promptline
 
-if [ $(which thefuck) ] ; then 
-    eval "$(thefuck --alias)"
-fi
-
 export GRIN_ARGS=--skip-dirs=.svn,.hg,.bzr,.git,env,build,dist,parts,var,instance,migrations
 
 function repeat { while $@ ; do true ; done }
-. /home/menesis/.shell_prompt.sh
