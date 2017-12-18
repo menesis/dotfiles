@@ -1,6 +1,10 @@
-BoldAsFont=-1
+BoldAsFont=no
+CursorType=block
 Font=Consolas
 FontHeight=10
 Columns=100
 Rows=35
 Term=xterm-256color
+BackgroundColour=32,32,32
+Transparency=low
+BoldAsColour=yes

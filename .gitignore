@@ -1,14 +1,33 @@
-.cache
+/.aptcyg/
 /.bash_history
+/.cache/
+/.cisco/
+/.conda/
+/.dbus/
 /.dotnet/
+/.envs/
+/.history
+/.IPautomataDesigner/
+/.ipython/
+/.lesshst
+/.local/
+/.proxy.sh
+/.PyCharmCE2016.3/
+/.PyCharmCE2017.2/
 /.PyCharmCE2017.3/
+/.rnd
 /.shell_prompt.sh
+/.ssh/
+/.sudo_as_admin_successful
 /.tig_history
 /.vim/
 /.viminfo
+/.z
 /3D Objects/
 /AppData/
+/Application Data/
 /Contacts/
+/Cookies/
 /Desktop/
 /Documents/
 /Downloads/
@@ -16,16 +35,24 @@
 /Evernote/
 /Favorites/
 /IntelGraphicsProfiles/
+/LauncherFolder
 /Links/
+/Local Settings/
 /MicrosoftEdgeBackups/
 /Music/
+/My Documents/
+/MyDocuments
 /ntuser.*
 /NTUSER.DAT*
 /OneDrive/
 /Pictures/
+/Programs/
 /Projects/
+/Recent/
+/Root/
 /Saved Games/
 /Searches/
+/SendTo/
+/Start Menu/
 /Videos/
-/.lesshst
-/.sudo_as_admin_successful
+/WINDOWS/

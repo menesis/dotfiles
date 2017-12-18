@@ -23,30 +23,11 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-if [ "$TERM" == "xterm" ]; then 
-    export TERM=xterm-256color 
-elif [ "$TERM" == "screen" ]; then 
-    export TERM=screen-256color 
-fi 
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+if [ "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+elif [ "$TERM" == "screen" ]; then
+    export TERM=screen-256color
 fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-#case "$TERM" in
-#xterm-color)
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#    ;;
-#*)
-#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#    ;;
-#esac
-
-# Comment in the above and uncomment this below for a color prompt
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
-#PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -62,8 +43,6 @@ esac
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
 fi
 
 # Alias definitions.
@@ -75,18 +54,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
 export EDITOR=vim
-
 export LESS=-iRFX
-
+export GREP_COLORS='mt=01;32:sl=:cx=:fn=96:ln=32:bn=32:se=36'
 export PYTHONSTARTUP=$HOME/.python
+export PYTEST_ADDOPTS='--color=yes'
 
 export DEBFULLNAME='Gediminas Paulauskas'
 export DEBEMAIL='menesis@pov.lt'
@@ -96,14 +68,28 @@ export REQUESTSYNC_USE_LPAPI=yes
 
 function cdl { cd $1; ls; }
 function this { export PACKAGE=$(basename $PWD) ; echo $PACKAGE ; }
+function repeat { while $@ ; do true ; done }
+
+if [ "$OSTYPE" == "msys" ]; then
+    alias python='winpty python'
+    alias pipwrap='winpty pip'
+    alias pipwrap='winpty pipwrap'
+
+    PATH=`cygpath -u -p "$PATH"`
+    [[ $PATH =~ '/c/Python27' ]] || PATH="/c/Python27/Scripts:/c/Python27:$PATH"
+    if [ -d "$VIRTUAL_ENV" ] ; then
+        VIRTUAL_ENV=`cygpath -u "$VIRTUAL_ENV"`
+        PATH="$VIRTUAL_ENV/Scripts:$PATH"
+    fi
+else
+    PATH="$HOME/.local/bin:$PATH"
+fi
+export PATH
 
 # display only the current directory name in the terminal title
 function t { export PROMPT_COMMAND='echo -ne "\033]2;$(basename $PWD)\007"' ; promptline ; }
 # set terminal title
 function tt { unset PROMPT_COMMAND; echo -ne "\033]2;$1\007" ; promptline ; }
-
-# fix global menu https://bugs.launchpad.net/bugs/776499
-#function gvim () { (/usr/bin/gvim -f "$@" &>/dev/null &) }
 
 complete -F _django_completion -o default django-admin.py manage.py django-admin django
 
@@ -114,13 +100,10 @@ fi
 function promptline {
     # https://github.com/edkolev/promptline.vim
     if [ -f ~/.shell_prompt.sh ] ; then
-        if [[ "$TERM" =~ "256color" ]]; then 
+        if [[ "$TERM" =~ "256color" ]]; then
             source ~/.shell_prompt.sh
         fi
     fi
 }
 promptline
 
-export GRIN_ARGS=--skip-dirs=.svn,.hg,.bzr,.git,env,build,dist,parts,var,instance,migrations
-
-function repeat { while $@ ; do true ; done }
