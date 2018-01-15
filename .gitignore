@@ -1,3 +1,4 @@
+/.android/
 /.aptcyg/
 /.bash_history
 /.cache/
@@ -15,6 +16,7 @@
 /.PyCharmCE2016.3/
 /.PyCharmCE2017.2/
 /.PyCharmCE2017.3/
+/.python_history
 /.rnd
 /.shell_prompt.sh
 /.ssh/
@@ -23,6 +25,7 @@
 /.vim/
 /.viminfo
 /.z
+/_viminfo
 /3D Objects/
 /AppData/
 /Application Data/

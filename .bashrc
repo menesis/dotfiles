@@ -57,7 +57,6 @@ fi
 export EDITOR=vim
 export LESS=-iRFX
 export GREP_COLORS='mt=01;32:sl=:cx=:fn=96:ln=32:bn=32:se=36'
-export PYTHONSTARTUP=$HOME/.python
 export PYTEST_ADDOPTS='--color=yes'
 
 export DEBFULLNAME='Gediminas Paulauskas'
@@ -81,8 +80,10 @@ if [ "$OSTYPE" == "msys" ]; then
         VIRTUAL_ENV=`cygpath -u "$VIRTUAL_ENV"`
         PATH="$VIRTUAL_ENV/Scripts:$PATH"
     fi
+    export PYTHONSTARTUP="$USERPROFILE\.python.py"
 else
     PATH="$HOME/.local/bin:$PATH"
+    export PYTHONSTARTUP=$HOME/.python.py
 fi
 export PATH
 
