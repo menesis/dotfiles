@@ -8,3 +8,5 @@ Term=xterm-256color
 BackgroundColour=32,32,32
 Transparency=low
 BoldAsColour=yes
+Locale=lt_LT
+Charset=UTF-8

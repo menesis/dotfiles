@@ -71,11 +71,13 @@ function repeat { while $@ ; do true ; done }
 
 if [ "$OSTYPE" == "msys" ]; then
     alias python='winpty python'
-    alias pipwrap='winpty pip'
+    alias ipython='winpty ipython'
+    alias pip='winpty pip'
     alias pipwrap='winpty pipwrap'
 
     PATH=`cygpath -u -p "$PATH"`
-    [[ $PATH =~ '/c/Python27' ]] || PATH="/c/Python27/Scripts:/c/Python27:$PATH"
+    APPDATA_U=`cygpath -u "$APPDATA"`
+    [[ $PATH =~ '/Python/Python36' ]] || PATH="$APPDATA_U/Python/Python36/Scripts:$PATH"
     if [ -d "$VIRTUAL_ENV" ] ; then
         VIRTUAL_ENV=`cygpath -u "$VIRTUAL_ENV"`
         PATH="$VIRTUAL_ENV/Scripts:$PATH"
