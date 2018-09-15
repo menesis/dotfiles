@@ -70,10 +70,12 @@ function this { export PACKAGE=$(basename $PWD) ; echo $PACKAGE ; }
 function repeat { while $@ ; do true ; done }
 
 if [ "$OSTYPE" == "msys" ]; then
-    alias python='winpty python'
-    alias ipython='winpty ipython'
-    alias pip='winpty pip'
-    alias pipwrap='winpty pipwrap'
+    if [ -f /usr/bin/winpty ]; then
+        alias python='winpty python'
+        alias ipython='winpty ipython'
+        alias pip='winpty pip'
+        alias pipwrap='winpty pipwrap'
+    fi
 
     PATH=`cygpath -u -p "$PATH"`
     APPDATA_U=`cygpath -u "$APPDATA"`

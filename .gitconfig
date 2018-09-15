@@ -22,3 +22,5 @@
         uncommit = reset HEAD^
 [core]
 	autocrlf = input
+[winUpdater]
+	recentlySeenVersion = 2.18.0.windows.1
