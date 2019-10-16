@@ -23,4 +23,8 @@
 [core]
 	autocrlf = input
 [winUpdater]
-	recentlySeenVersion = 2.18.0.windows.1
+	recentlySeenVersion = 2.23.0.windows.1
+[rebase]
+	useBuiltin = true
+[stash]
+	useBuiltin = true

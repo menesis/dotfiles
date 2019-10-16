@@ -62,9 +62,6 @@ export PYTEST_ADDOPTS='--color=yes'
 export DEBFULLNAME='Gediminas Paulauskas'
 export DEBEMAIL='menesis@pov.lt'
 
-export PBUILDFOLDER=/var/cache/pbuilder
-export REQUESTSYNC_USE_LPAPI=yes
-
 function cdl { cd $1; ls; }
 function this { export PACKAGE=$(basename $PWD) ; echo $PACKAGE ; }
 function repeat { while $@ ; do true ; done }
@@ -79,7 +76,6 @@ if [ "$OSTYPE" == "msys" ]; then
 
     PATH=`cygpath -u -p "$PATH"`
     APPDATA_U=`cygpath -u "$APPDATA"`
-    [[ $PATH =~ '/Python/Python36' ]] || PATH="$APPDATA_U/Python/Python36/Scripts:$PATH"
     if [ -d "$VIRTUAL_ENV" ] ; then
         VIRTUAL_ENV=`cygpath -u "$VIRTUAL_ENV"`
         PATH="$VIRTUAL_ENV/Scripts:$PATH"
@@ -112,3 +108,7 @@ function promptline {
 }
 promptline
 
+if [ -f /c/Miniconda3/etc/profile.d/conda.sh ] ; then
+    source /c/Miniconda3/etc/profile.d/conda.sh
+    conda activate
+fi

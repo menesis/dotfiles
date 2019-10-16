@@ -1,34 +1,41 @@
+*~
+.x/
 /.android/
 /.aptcyg/
 /.bash_history
 /.cache/
 /.cisco/
 /.conda/
+/.config/configstore/
+/.config/mintty/themes/
 /.dbus/
+/.dbus-keyrings/
 /.dotnet/
 /.envs/
+/.gnupg/
 /.history
 /.IPautomataDesigner/
 /.ipython/
 /.lesshst
 /.local/
-/.proxy.sh
-/.PyCharmCE2016.3/
-/.PyCharmCE2017.2/
-/.PyCharmCE2017.3/
+/.markdownNavigator/
+/.PyCharm*/
 /.python_history
 /.rnd
+/.rtm*.json
 /.shell_prompt.sh
 /.ssh/
 /.sudo_as_admin_successful
 /.tig_history
 /.vim/
 /.viminfo
+/.wget-hsts
 /.z
 /_viminfo
 /3D Objects/
 /AppData/
 /Application Data/
+/Archyvas/
 /Contacts/
 /Cookies/
 /Desktop/
@@ -41,10 +48,10 @@
 /LauncherFolder
 /Links/
 /Local Settings/
-/MicrosoftEdgeBackups/
-/Music/
 /My Documents/
+/MicrosoftEdgeBackups/
 /MyDocuments
+/Music/
 /ntuser.*
 /NTUSER.DAT*
 /OneDrive/
@@ -56,8 +63,7 @@
 /Saved Games/
 /Searches/
 /SendTo/
+/Source/
 /Start Menu/
 /Videos/
 /WINDOWS/
-/Archyvas/
-/Source/

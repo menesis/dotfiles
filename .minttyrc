@@ -10,3 +10,4 @@ Transparency=low
 BoldAsColour=yes
 Locale=lt_LT
 Charset=UTF-8
+ThemeFile=mintty
