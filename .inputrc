@@ -4,6 +4,8 @@
 
 # Ctrl+Backspace/Delete to delete whole words
 "\e[3;5~": kill-word
+"\C-h": backward-kill-word
+# mintty
 "\C-_": backward-kill-word
 
 # PageUp/PageDown for searching command history
