@@ -8,6 +8,7 @@
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
+HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"; # Make some commands not show up in history
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -63,7 +64,7 @@ export DEBFULLNAME='Gediminas Paulauskas'
 export DEBEMAIL='menesis@pov.lt'
 
 function cdl { cd $1; ls; }
-function this { export PACKAGE=$(basename $PWD) ; echo $PACKAGE ; }
+function this { echo "$(basename $PWD)" ; }
 function repeat { while $@ ; do true ; done }
 
 if [ "$OSTYPE" == "msys" ]; then
@@ -83,7 +84,7 @@ if [ "$OSTYPE" == "msys" ]; then
     export PYTHONSTARTUP="$USERPROFILE\.python.py"
 else
     PATH="$HOME/.local/bin:$PATH"
-    export PYTHONSTARTUP=$HOME/.python.py
+    #export PYTHONSTARTUP=$HOME/.python.py
 fi
 export PATH
 
@@ -94,8 +95,18 @@ function tt { unset PROMPT_COMMAND; echo -ne "\033]2;$1\007" ; promptline ; }
 
 complete -F _django_completion -o default django-admin.py manage.py django-admin django
 
-if [ -f ~/src/github/z/z.sh ] ; then
-    source ~/src/github/z/z.sh
+if [ -z "$TEMP" ] ; then
+    export TEMP=/tmp
+fi
+
+if [ -d "$HOME/Source" ] ; then
+    SRC="$HOME/Source"
+else
+    SRC="$HOME/src"
+fi
+
+if [ -f "$SRC/github/z/z.sh" ] ; then
+    source "$SRC/github/z/z.sh"
 fi
 
 function promptline {
