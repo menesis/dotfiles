@@ -1,5 +1,4 @@
 *~
-.x/
 /.android/
 /.aptcyg/
 /.bash_history
@@ -8,17 +7,21 @@
 /.conda/
 /.config/configstore/
 /.config/mintty/themes/
-/.dbus/
 /.dbus-keyrings/
+/.dbus/
+/.docker/
 /.dotnet/
 /.envs/
+/.git-for-windows-updater
 /.gnupg/
 /.history
 /.IPautomataDesigner/
 /.ipython/
+/.landscape/
 /.lesshst
 /.local/
 /.markdownNavigator/
+/.motd_shown
 /.PyCharm*/
 /.python_history
 /.rnd
@@ -29,12 +32,13 @@
 /.tig_history
 /.vim/
 /.viminfo
+/.WebStorm*/
 /.wget-hsts
 /.z
 /_viminfo
-/3D Objects/
+/3D\ Objects/
 /AppData/
-/Application Data/
+/Application\ Data/
 /Archyvas/
 /Contacts/
 /Cookies/
@@ -44,11 +48,12 @@
 /Dropbox/
 /Evernote/
 /Favorites/
+/Google\ Drive/
 /IntelGraphicsProfiles/
 /LauncherFolder
 /Links/
-/Local Settings/
-/My Documents/
+/Local\ Settings/
+/My\ Documents/
 /MicrosoftEdgeBackups/
 /MyDocuments
 /Music/
@@ -60,10 +65,10 @@
 /Projects/
 /Recent/
 /Root/
-/Saved Games/
+/Saved\ Games/
 /Searches/
 /SendTo/
 /Source/
-/Start Menu/
+/Start\ Menu/
 /Videos/
 /WINDOWS/
