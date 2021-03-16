@@ -84,7 +84,7 @@ if [ "$OSTYPE" == "msys" ]; then
     export PYTHONSTARTUP="$USERPROFILE\.python.py"
 else
     PATH="$HOME/.local/bin:$PATH"
-    #export PYTHONSTARTUP=$HOME/.python.py
+    export PYTHONSTARTUP=$HOME/.python.py
 fi
 export PATH
 
