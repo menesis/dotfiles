@@ -3,10 +3,11 @@
 /.aptcyg/
 /.bash_history
 /.cache/
-/.cisco/
 /.conda/
 /.config/configstore/
+/.config/dconf/
 /.config/mintty/themes/
+/.config/wslu/
 /.dbus-keyrings/
 /.dbus/
 /.docker/
@@ -15,7 +16,6 @@
 /.git-for-windows-updater
 /.gnupg/
 /.history
-/.IPautomataDesigner/
 /.ipython/
 /.landscape/
 /.lesshst
@@ -32,10 +32,12 @@
 /.tig_history
 /.vim/
 /.viminfo
+/.virtualenvs
+/.vscode/
+/.vscode-server/
 /.WebStorm*/
 /.wget-hsts
 /.z
-/_viminfo
 /3D\ Objects/
 /AppData/
 /Application\ Data/
@@ -53,10 +55,10 @@
 /LauncherFolder
 /Links/
 /Local\ Settings/
-/My\ Documents/
 /MicrosoftEdgeBackups/
-/MyDocuments
 /Music/
+/MyDocuments
+/My\ Documents/
 /ntuser.*
 /NTUSER.DAT*
 /OneDrive/
@@ -69,6 +71,8 @@
 /Searches/
 /SendTo/
 /Source/
+/src/
 /Start\ Menu/
 /Videos/
 /WINDOWS/
+/_viminfo
