@@ -123,3 +123,14 @@ if [ -f /c/Miniconda3/etc/profile.d/conda.sh ] ; then
     source /c/Miniconda3/etc/profile.d/conda.sh
     conda activate
 fi
+
+# How to Setup X11 forwarding in WSL2 
+# https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
+if [ -f /usr/bin/host ] ; then
+    # Get the IP Address of the Windows 10 Host and use it in Environment.
+    HOST_IP=$(host `hostname` | grep -oP '(\s)\d+(\.\d+){3}' | tail -1 | awk '{ print $NF }' | tr -d '\r')
+    export LIBGL_ALWAYS_INDIRECT=1
+    export DISPLAY=$HOST_IP:0.0
+    export NO_AT_BRIDGE=1
+    export PULSE_SERVER=tcp:$HOST_IP
+fi
