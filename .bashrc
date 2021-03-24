@@ -3,7 +3,10 @@
 # for examples
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -20,6 +23,10 @@ HISTFILESIZE=20000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -83,7 +90,6 @@ if [ "$OSTYPE" == "msys" ]; then
     fi
     export PYTHONSTARTUP="$USERPROFILE\.python.py"
 else
-    PATH="$HOME/.local/bin:$PATH"
     export PYTHONSTARTUP=$HOME/.python.py
 fi
 export PATH
@@ -122,15 +128,4 @@ promptline
 if [ -f /c/Miniconda3/etc/profile.d/conda.sh ] ; then
     source /c/Miniconda3/etc/profile.d/conda.sh
     conda activate
-fi
-
-# How to Setup X11 forwarding in WSL2 
-# https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
-if [ -f /usr/bin/host ] ; then
-    # Get the IP Address of the Windows 10 Host and use it in Environment.
-    HOST_IP=$(host `hostname` | grep -oP '(\s)\d+(\.\d+){3}' | tail -1 | awk '{ print $NF }' | tr -d '\r')
-    export LIBGL_ALWAYS_INDIRECT=1
-    export DISPLAY=$HOST_IP:0.0
-    export NO_AT_BRIDGE=1
-    export PULSE_SERVER=tcp:$HOST_IP
 fi

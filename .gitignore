@@ -6,7 +6,9 @@
 /.conda/
 /.config/configstore/
 /.config/dconf/
+/.config/mimeapps.list
 /.config/mintty/themes/
+/.config/pulse/
 /.config/wslu/
 /.dbus-keyrings/
 /.dbus/
