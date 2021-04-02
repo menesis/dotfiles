@@ -1,6 +1,8 @@
 *~
 /.android/
 /.aptcyg/
+/.aws
+/.azure
 /.bash_history
 /.cache/
 /.conda/
@@ -78,3 +80,4 @@
 /Videos/
 /WINDOWS/
 /_viminfo
+/repos/
