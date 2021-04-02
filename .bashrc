@@ -129,3 +129,19 @@ if [ -f /c/Miniconda3/etc/profile.d/conda.sh ] ; then
     source /c/Miniconda3/etc/profile.d/conda.sh
     conda activate
 fi
+
+# Fix WSL2 interop issue https://superuser.com/a/1602624
+function fix_wsl2_interop() {
+    for i in $(pstree -np -s $$ | grep -o -E '[0-9]+'); do
+        if [[ -e "/run/WSL/${i}_interop" ]]; then
+            export WSL_INTEROP=/run/WSL/${i}_interop
+        fi
+    done
+}
+
+if [ -f /usr/share/wslu/wslusc-helper.sh ] ; then
+    # set DISPLAY
+    source /usr/share/wslu/wslusc-helper.sh
+    export NO_AT_BRIDGE=1
+    fix_wsl2_interop
+fi
