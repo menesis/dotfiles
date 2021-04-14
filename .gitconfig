@@ -1,6 +1,6 @@
 [user]
 	name = Gediminas Paulauskas
-	email = gediminas@menesis.lt
+	email = gpa@cloudeon.com
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
