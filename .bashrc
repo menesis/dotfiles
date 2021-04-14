@@ -47,6 +47,15 @@ xterm*|rxvt*)
     ;;
 esac
 
+# enable bash completion in interactive shells
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
@@ -99,7 +108,7 @@ function t { export PROMPT_COMMAND='echo -ne "\033]2;$(basename $PWD)\007"' ; pr
 # set terminal title
 function tt { unset PROMPT_COMMAND; echo -ne "\033]2;$1\007" ; promptline ; }
 
-complete -F _django_completion -o default django-admin.py manage.py django-admin django
+#complete -F _django_completion -o default django-admin.py manage.py django-admin django
 
 if [ -z "$TEMP" ] ; then
     export TEMP=/tmp
