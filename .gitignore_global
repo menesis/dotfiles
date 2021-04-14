@@ -1,0 +1,12 @@
+### vscode ###
+.vscode/
+*.code-workspace
+
+### python ###
+.env/
+.venv/
+env/
+venv/
+
+.pytest_cache/
+__pycache__/

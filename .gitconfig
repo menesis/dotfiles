@@ -22,6 +22,7 @@
         uncommit = reset HEAD^
 [core]
 	autocrlf = input
+	excludesfile = /home/gpa/.gitignore_global
 [winUpdater]
 	recentlySeenVersion = 2.25.1.windows.1
 [rebase]
