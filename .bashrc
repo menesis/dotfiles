@@ -103,13 +103,6 @@ else
 fi
 export PATH
 
-# display only the current directory name in the terminal title
-function t { export PROMPT_COMMAND='echo -ne "\033]2;$(basename $PWD)\007"' ; promptline ; }
-# set terminal title
-function tt { unset PROMPT_COMMAND; echo -ne "\033]2;$1\007" ; promptline ; }
-
-#complete -F _django_completion -o default django-admin.py manage.py django-admin django
-
 if [ -z "$TEMP" ] ; then
     export TEMP=/tmp
 fi
@@ -173,3 +166,5 @@ if [ -f /usr/share/wslu/wslusc-helper.sh ] ; then
     export NO_AT_BRIDGE=1
     fix_wsl2_interop
 fi
+
+export PIPENV_SHELL_FANCY=1
