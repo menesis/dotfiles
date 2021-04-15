@@ -154,8 +154,22 @@ function fix_wsl2_interop() {
 }
 
 if [ -f /usr/share/wslu/wslusc-helper.sh ] ; then
-    # set DISPLAY
-    source /usr/share/wslu/wslusc-helper.sh
+    if [[ -n $WSL_INTEROP ]]; then
+      # enable external x display for WSL 2
+      wsl2_d_tmp="$(grep nameserver /etc/resolv.conf | awk '{print $2}')"
+      export DISPLAY=${wsl2_d_tmp}:0
+
+      unset wsl2_d_tmp
+    else
+      export DISPLAY=:0
+    fi
+
+    win_sys_scaling=$(wslsys -S -s)
+    export GDK_SCALE=$win_sys_scaling
+    export QT_SCALE_FACTOR=$win_sys_scaling
+    export GDK_DPI_SCALE=1
+    unset win_sys_scaling
+
     export NO_AT_BRIDGE=1
     fix_wsl2_interop
 fi
