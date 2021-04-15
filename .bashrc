@@ -120,6 +120,7 @@ else
     SRC="$HOME/src"
 fi
 
+# https://github.com/rupa/z
 if [ -f "$SRC/github/z/z.sh" ] ; then
     source "$SRC/github/z/z.sh"
 fi
@@ -133,6 +134,10 @@ function promptline {
     fi
 }
 promptline
+
+if [ $(which thefuck 2>/dev/null) ] ; then
+    eval "$(thefuck --alias)"
+fi
 
 if [ -f /c/Miniconda3/etc/profile.d/conda.sh ] ; then
     source /c/Miniconda3/etc/profile.d/conda.sh

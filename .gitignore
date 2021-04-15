@@ -11,6 +11,7 @@
 /.config/mimeapps.list
 /.config/mintty/themes/
 /.config/pulse/
+/.config/thefuck/
 /.config/wslu/
 /.dbus-keyrings/
 /.dbus/
@@ -26,6 +27,7 @@
 /.local/
 /.markdownNavigator/
 /.motd_shown
+/.poetry/
 /.PyCharm*/
 /.python_history
 /.rnd
@@ -65,7 +67,7 @@
 /My\ Documents/
 /ntuser.*
 /NTUSER.DAT*
-/OneDrive/
+/OneDrive*/
 /Pictures/
 /Programs/
 /Projects/
@@ -82,3 +84,4 @@
 /_viminfo
 /bin/
 /repos/
+/wslu/
