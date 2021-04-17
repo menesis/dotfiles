@@ -84,15 +84,15 @@ function this { echo "$(basename $PWD)" ; }
 function repeat { while $@ ; do true ; done }
 
 if [ "$OSTYPE" == "msys" ]; then
-    if [ -f /usr/bin/winpty ]; then
-        alias python='winpty python'
-        alias ipython='winpty ipython'
-        alias pip='winpty pip'
-        alias pipwrap='winpty pipwrap'
+    if [ -f /usr/bin/winpty ] &&
+        grep -sq -v '^MSYS=enable_pcon' /etc/git-bash.config
+    then
+        for program in python ipython pip ; do
+            alias $program="winpty $program"
+        done
     fi
 
     PATH=`cygpath -u -p "$PATH"`
-    APPDATA_U=`cygpath -u "$APPDATA"`
     if [ -d "$VIRTUAL_ENV" ] ; then
         VIRTUAL_ENV=`cygpath -u "$VIRTUAL_ENV"`
         PATH="$VIRTUAL_ENV/Scripts:$PATH"
