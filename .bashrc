@@ -123,6 +123,7 @@ function promptline {
     if [ -f ~/.shell_prompt.sh ] ; then
         if [[ "$TERM" =~ "256color" ]]; then
             source ~/.shell_prompt.sh
+            export VIRTUAL_ENV_DISABLE_PROMPT=1
         fi
     fi
 }
@@ -168,3 +169,5 @@ if [ -f /usr/share/wslu/wslusc-helper.sh ] ; then
 fi
 
 export PIPENV_SHELL_FANCY=1
+export PIPENV_KEEP_OUTDATED=1
+export PIPENV_VERBOSITY=-1
