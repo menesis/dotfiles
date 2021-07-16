@@ -85,3 +85,9 @@
 /bin/
 /repos/
 /wslu/
+/.npm/
+/.click-history
+/GediminasPaulauskas
+/.pylint.d/
+/.config/fish/
+/.config/mc/
