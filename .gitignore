@@ -3,18 +3,23 @@
 /.aptcyg/
 /.aws
 /.azure
+/.azure-functions-core-tools/
+/.azure-shell/
 /.bash_history
 /.cache/
+/.click-history
 /.conda/
 /.config/configstore/
 /.config/dconf/
+/.config/fish/
+/.config/mc/
 /.config/mimeapps.list
 /.config/mintty/themes/
 /.config/pulse/
 /.config/thefuck/
 /.config/wslu/
-/.dbus-keyrings/
 /.dbus/
+/.dbus-keyrings/
 /.docker/
 /.dotnet/
 /.envs/
@@ -22,13 +27,17 @@
 /.gnupg/
 /.history
 /.ipython/
+/.kube/
 /.landscape/
 /.lesshst
 /.local/
 /.markdownNavigator/
+/.minikube/
 /.motd_shown
+/.npm/
 /.poetry/
 /.PyCharm*/
+/.pylint.d/
 /.python_history
 /.rnd
 /.rtm*.json
@@ -44,10 +53,13 @@
 /.WebStorm*/
 /.wget-hsts
 /.z
+/.z.*
+/_viminfo
 /3D\ Objects/
 /AppData/
 /Application\ Data/
 /Archyvas/
+/bin/
 /Contacts/
 /Cookies/
 /Desktop/
@@ -56,6 +68,7 @@
 /Dropbox/
 /Evernote/
 /Favorites/
+/GediminasPaulauskas
 /Google\ Drive/
 /IntelGraphicsProfiles/
 /LauncherFolder
@@ -63,8 +76,8 @@
 /Local\ Settings/
 /MicrosoftEdgeBackups/
 /Music/
-/MyDocuments
 /My\ Documents/
+/MyDocuments
 /ntuser.*
 /NTUSER.DAT*
 /OneDrive*/
@@ -72,6 +85,7 @@
 /Programs/
 /Projects/
 /Recent/
+/repos/
 /Root/
 /Saved\ Games/
 /Searches/
@@ -81,13 +95,4 @@
 /Start\ Menu/
 /Videos/
 /WINDOWS/
-/_viminfo
-/bin/
-/repos/
 /wslu/
-/.npm/
-/.click-history
-/GediminasPaulauskas
-/.pylint.d/
-/.config/fish/
-/.config/mc/
