@@ -1,6 +1,7 @@
 alias la='ls -a'
 alias ll='ls -l'
 alias l='ls -1'
+alias diff='diff --color=auto'
 alias grep='grep --color'
 alias got='git status'
 alias tiga='tig --all'

@@ -11,15 +11,15 @@
 	ci = commit
 	di = diff
 	dc = diff --cached
-        st = status
-        lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-        lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-        lg = !"git lg1"
+	st = status
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lg = !"git lg1"
 	replay = cherry-pick
 	tip = !"git --no-pager log -n1"
-        top = !"git --no-pager log --graph --abbrev-commit --decorate --oneline -n 10"
-        up = !"git fetch --all --prune ; git pull --ff-only"
-        uncommit = reset HEAD^
+	top = !"git --no-pager log --graph --abbrev-commit --decorate --oneline -n 10"
+	up = !"git fetch --all --prune ; git pull --ff-only"
+	uncommit = reset HEAD^
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
@@ -27,5 +27,6 @@
 	recentlySeenVersion = 2.25.1.windows.1
 [rebase]
 	useBuiltin = true
+	autosquash = true
 [stash]
 	useBuiltin = true

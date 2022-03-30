@@ -107,11 +107,11 @@ if [ -z "$TEMP" ] ; then
     export TEMP=/tmp
 fi
 
-if [ -d "$HOME/Source" ] ; then
-    SRC="$HOME/Source"
-else
+#if [ -d "$HOME/Source" ] ; then
+#    SRC="$HOME/Source"
+#else
     SRC="$HOME/src"
-fi
+#fi
 
 # https://github.com/rupa/z
 if [ -f "$SRC/github/z/z.sh" ] ; then
