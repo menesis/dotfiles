@@ -135,6 +135,8 @@ fi
 
 if [ -f /c/Miniconda3/etc/profile.d/conda.sh ] ; then
     source /c/Miniconda3/etc/profile.d/conda.sh
+    # See https://github.com/conda/conda/issues/7445#issuecomment-774579800
+    export PYTHONIOENCODING=utf8
     conda activate
 fi
 
@@ -152,6 +154,7 @@ if [ -f /usr/share/wslu/wslusc-helper.sh ] ; then
       # enable external x display for WSL 2
       wsl2_d_tmp="$(grep nameserver /etc/resolv.conf | awk '{print $2}')"
       export DISPLAY=${wsl2_d_tmp}:0
+      export LIBGL_ALWAYS_INDIRECT=1
 
       unset wsl2_d_tmp
     else
