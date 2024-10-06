@@ -102,3 +102,7 @@
 /Videos/
 /WINDOWS/
 /wslu/
+.defi/
+.node_repl_history
+en_backup.db
+.myst_node_launcher
