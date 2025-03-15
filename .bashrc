@@ -114,8 +114,8 @@ fi
 #fi
 
 # https://github.com/rupa/z
-if [ -f "$SRC/github/z/z.sh" ] ; then
-    source "$SRC/github/z/z.sh"
+if [ -f "$SRC/rupa/z/z.sh" ] ; then
+    source "$SRC/rupa/z/z.sh"
 fi
 
 function promptline {
@@ -129,8 +129,9 @@ function promptline {
 }
 promptline
 
-if [ $(which thefuck 2>/dev/null) ] ; then
-    eval "$(thefuck --alias)"
+# https://github.com/Schniz/fnm
+if command -v fnm >/dev/null ; then
+    eval "$(fnm env --shell bash)"
 fi
 
 if [ -f /c/Miniconda3/etc/profile.d/conda.sh ] ; then

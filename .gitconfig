@@ -30,3 +30,5 @@
 	autosquash = true
 [stash]
 	useBuiltin = true
+[credential "https://git.heroku.com"]
+	provider = generic

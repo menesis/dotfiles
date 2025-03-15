@@ -2,7 +2,7 @@
 
 # Leave some useful imports
 import datetime
-from datetime import date, time, timedelta, timezone
+from datetime import date, timedelta, timezone
 try:
     from dateutil.relativedelta import relativedelta
 except ImportError:
