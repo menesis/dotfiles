@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -77,12 +77,14 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git 1password dotenv colored-man-pages dnf httpie pip podman)
+plugins=(git 1password colored-man-pages dnf httpie pip podman aliases)
+#disabled_plugins=(dotenv)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export LESS=-iRFX
 export PYTHONSTARTUP=$HOME/.python.py
 
 # Ctrl+Backspace/Delete to delete whole words
