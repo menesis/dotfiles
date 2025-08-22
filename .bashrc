@@ -1,12 +1,28 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# .bashrc
 
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -107,11 +123,11 @@ if [ -z "$TEMP" ] ; then
     export TEMP=/tmp
 fi
 
-#if [ -d "$HOME/Source" ] ; then
-#    SRC="$HOME/Source"
-#else
+if [ -d "$HOME/Source" ] ; then
+    SRC="$HOME/Source"
+else
     SRC="$HOME/src"
-#fi
+fi
 
 # https://github.com/rupa/z
 if [ -f "$SRC/github/z/z.sh" ] ; then
@@ -128,10 +144,6 @@ function promptline {
     fi
 }
 promptline
-
-if [ $(which thefuck 2>/dev/null) ] ; then
-    eval "$(thefuck --alias)"
-fi
 
 if [ -f /c/Miniconda3/etc/profile.d/conda.sh ] ; then
     source /c/Miniconda3/etc/profile.d/conda.sh
