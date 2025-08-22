@@ -1,0 +1,19 @@
+[global_config]
+[keybindings]
+[profiles]
+  [[default]]
+    font = MesloLGS NF 10
+    foreground_color = "#ffffff"
+    scrollback_lines = 10000
+    use_system_font = False
+    title_transmit_fg_color = "#000000"
+    title_transmit_bg_color = "#ffffff"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
