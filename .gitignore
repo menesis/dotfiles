@@ -106,3 +106,9 @@
 .node_repl_history
 en_backup.db
 .myst_node_launcher
+.zsh_history
+.var/
+.sqlite_history
+.kshrc
+.cisco/
+.mozilla/
